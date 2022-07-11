@@ -7,7 +7,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringJUnitConfig(locations = {"classpath:config1.xml","classpath:config0.xml"})
-public class TestSpringJUnitConfig3
+public class TestSpringJUnitConfigLocations
 {
 
     @Autowired

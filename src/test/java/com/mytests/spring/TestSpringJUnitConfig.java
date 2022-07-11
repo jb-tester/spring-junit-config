@@ -1,7 +1,9 @@
 package com.mytests.spring;
 
 import com.mytests.spring.configs.Bean1;
+import com.mytests.spring.configs.Bean11;
 import com.mytests.spring.configs.Config0;
+import com.mytests.spring.configs.Config1;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -14,15 +16,22 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * <p>Project: spring-junit-config</p>
  * *******************************
  */
-@SpringJUnitConfig(classes = Config0.class)
+@SpringJUnitConfig(classes = {Config0.class, Config1.class})
 public class TestSpringJUnitConfig {
 
     @Autowired
     private Bean1 bean1; // https://youtrack.jetbrains.com/issue/IDEA-166549
+    @Autowired
+    private Bean11 bean11;
+
 
     @Test
     public void testBean1Exists() {
       assertNotNull(bean1);  
+    }
+    @Test
+    public void testBean11Exists() {
+        assertNotNull(bean11);
     }
     @Test
     public void testBean1Id() {
